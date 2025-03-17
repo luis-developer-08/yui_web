@@ -11,9 +11,13 @@ import {
     Button,
 } from "@heroui/react";
 import ApplicationLogo from "./ApplicationLogo";
+import useLatestVersion from "@/Hooks/useLatestVersion";
 
 const NavbarHUI = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { version, loading, error } = useLatestVersion(
+        "luis-developer-08/yui-installer"
+    );
 
     const menuItems = [
         { name: "Home", url: "home" },
@@ -54,6 +58,9 @@ const NavbarHUI = () => {
                 ))}
             </NavbarContent>
             <NavbarContent justify="end">
+                <NavbarItem>
+                    <Link color="foreground">{version}</Link>
+                </NavbarItem>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="sm:hidden"
