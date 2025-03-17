@@ -4,6 +4,8 @@ import { Card, CardBody, Image, Divider, Button } from "@heroui/react";
 import { router } from "@inertiajs/react";
 
 const Hero = () => {
+    //Sample
+
     return (
         <div
             className="min-h-[80vh] flex flex-col justify-center items-center"
