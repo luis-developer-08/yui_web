@@ -1,0 +1,80 @@
+import React, { useState } from "react";
+import {
+    Navbar,
+    NavbarBrand,
+    NavbarContent,
+    NavbarItem,
+    NavbarMenuToggle,
+    NavbarMenu,
+    NavbarMenuItem,
+    Link,
+    Button,
+} from "@heroui/react";
+import ApplicationLogo from "./ApplicationLogo";
+
+const NavbarHUI = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const menuItems = [
+        { name: "Home", url: "home" },
+        { name: "Features", url: "features" },
+        { name: "Getting Started", url: "getting-started" },
+        { name: "Usage", url: "usage" },
+    ];
+
+    // Function to handle link clicks
+    const handleLinkClick = () => {
+        setIsMenuOpen(false);
+    };
+
+    return (
+        <Navbar
+            onMenuOpenChange={setIsMenuOpen}
+            className="bg-sky-100"
+            maxWidth="xl"
+            isMenuOpen={isMenuOpen}
+        >
+            <NavbarContent>
+                <NavbarBrand>
+                    <div className="w-9 me-3">
+                        <ApplicationLogo />
+                    </div>
+                    {/* <AcmeLogo /> */}
+                    <p className="font-bold text-inherit">YUI</p>
+                </NavbarBrand>
+            </NavbarContent>
+
+            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+                {menuItems.map((item, index) => (
+                    <NavbarItem key={`${item}-${index}`}>
+                        <Link color="foreground" href={`#${item.url}`}>
+                            {item.name}
+                        </Link>
+                    </NavbarItem>
+                ))}
+            </NavbarContent>
+            <NavbarContent justify="end">
+                <NavbarMenuToggle
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                    className="sm:hidden"
+                />
+            </NavbarContent>
+            <NavbarMenu>
+                {menuItems.map((item, index) => (
+                    <NavbarMenuItem key={`mobile-${item}-${index}`}>
+                        <Link
+                            className="w-full"
+                            href={`#${item.url}`}
+                            size="lg"
+                            onPress={() => handleLinkClick()}
+                        >
+                            {item.name}
+                        </Link>
+                    </NavbarMenuItem>
+                ))}
+            </NavbarMenu>
+        </Navbar>
+    );
+};
+
+export default NavbarHUI;
