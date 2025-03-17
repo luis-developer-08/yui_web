@@ -6,7 +6,9 @@
 
         <!-- Open Graph Meta Tags -->
         <meta property="og:title" content="{{ config('app.name', 'Laravel') }}">
-        <meta property="og:description" content="This kit is JavaScript-first, using JSX instead of TSX, making it accessible to developers who prefer plain JavaScript over TypeScript. It includes React 19, TailwindCSS 4, and Breeze for simple authentication and scaffolding.">
+        <meta property="og:description" content="🚀 YUI is a lightweight Laravel installer for modern developers, featuring Laravel 12, React 19 (JSX), Inertia.js, TailwindCSS 4, and Breeze for authentication. Pre-configured with Orion for REST APIs, TanStack Query for state management, and Laravel-permission for role handling. Optimized with Vite for fast builds and includes PHPUnit & Pest for testing. Get started in minutes!
+
+Let me know if you want any tweaks! 🚀">
         <meta property="og:image" content="{{ asset('images/yui.png') }}">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:type" content="website">
@@ -15,7 +17,9 @@
         <!-- Twitter (X) Card (For Twitter) -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="{{ config('app.name', 'Laravel') }}">
-        <meta name="twitter:description" content="This kit is JavaScript-first, using JSX instead of TSX, making it accessible to developers who prefer plain JavaScript over TypeScript. It includes React 19, TailwindCSS 4, and Breeze for simple authentication and scaffolding.">
+        <meta name="twitter:description" content="🚀 YUI is a lightweight Laravel installer for modern developers, featuring Laravel 12, React 19 (JSX), Inertia.js, TailwindCSS 4, and Breeze for authentication. Pre-configured with Orion for REST APIs, TanStack Query for state management, and Laravel-permission for role handling. Optimized with Vite for fast builds and includes PHPUnit & Pest for testing. Get started in minutes!
+
+Let me know if you want any tweaks! 🚀">
         <meta name="twitter:image" content="{{ asset('images/yui.png') }}">
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
