@@ -5,15 +5,11 @@ import { router } from "@inertiajs/react";
 import GithubStarButton from "@/Components/GithubStarButton";
 
 const Hero = () => {
-    const handleLinkClick = (event, sectionId) => {
-        event.preventDefault(); // Prevent default anchor behavior
-
+    const handleLinkClick = (sectionId) => {
         const section = document.getElementById(sectionId);
         if (section) {
             section.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-
-        setIsMenuOpen(false); // Close menu on mobile after clicking
     };
 
     return (
@@ -75,8 +71,8 @@ const Hero = () => {
                                 <Button
                                     color="primary"
                                     size="lg"
-                                    onClick={(e) =>
-                                        handleLinkClick(e, "getting-started")
+                                    onClick={() =>
+                                        handleLinkClick("getting-started")
                                     }
                                 >
                                     Getting Started

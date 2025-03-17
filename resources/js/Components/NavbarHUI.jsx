@@ -25,14 +25,11 @@ const NavbarHUI = () => {
     ];
 
     // Function to handle smooth scrolling
-    const handleLinkClick = (event, sectionId) => {
-        event.preventDefault(); // Prevent default anchor behavior
-
+    const handleLinkClick = (sectionId) => {
         const section = document.getElementById(sectionId);
         if (section) {
             section.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-
         setIsMenuOpen(false); // Close menu on mobile after clicking
     };
 
@@ -57,8 +54,8 @@ const NavbarHUI = () => {
                     <NavbarItem key={`${item.url}-${index}`}>
                         <Link
                             color="foreground"
-                            href={`#${item.url}`}
-                            onClick={(e) => handleLinkClick(e, item.url)}
+                            // href={`#${item.url}`}
+                            onClick={() => handleLinkClick(item.url)}
                         >
                             {item.name}
                         </Link>
@@ -86,9 +83,8 @@ const NavbarHUI = () => {
                     <NavbarMenuItem key={`mobile-${item.url}-${index}`}>
                         <Link
                             className="w-full"
-                            href={`#${item.url}`}
                             size="lg"
-                            onClick={(e) => handleLinkClick(e, item.url)}
+                            onClick={() => handleLinkClick(item.url)}
                         >
                             {item.name}
                         </Link>
