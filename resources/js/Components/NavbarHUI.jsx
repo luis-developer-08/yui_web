@@ -8,16 +8,14 @@ import {
     NavbarMenu,
     NavbarMenuItem,
     Link,
-    Button,
 } from "@heroui/react";
 import ApplicationLogo from "./ApplicationLogo";
 import useLatestVersion from "@/Hooks/useLatestVersion";
+import GithubStarButton from "./GithubStarButton";
 
 const NavbarHUI = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { version, loading, error } = useLatestVersion(
-        "luis-developer-08/yui-installer"
-    );
+    const { version } = useLatestVersion("luis-developer-08/yui-installer");
 
     const menuItems = [
         { name: "Home", url: "home" },
@@ -26,15 +24,22 @@ const NavbarHUI = () => {
         { name: "Usage", url: "usage" },
     ];
 
-    // Function to handle link clicks
-    const handleLinkClick = () => {
-        setIsMenuOpen(false);
+    // Function to handle smooth scrolling
+    const handleLinkClick = (event, sectionId) => {
+        event.preventDefault(); // Prevent default anchor behavior
+
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+
+        setIsMenuOpen(false); // Close menu on mobile after clicking
     };
 
     return (
         <Navbar
             onMenuOpenChange={setIsMenuOpen}
-            className="bg-sky-100"
+            className="bg-sky-300/70"
             maxWidth="xl"
             isMenuOpen={isMenuOpen}
         >
@@ -43,37 +48,47 @@ const NavbarHUI = () => {
                     <div className="w-9 me-3">
                         <ApplicationLogo />
                     </div>
-                    {/* <AcmeLogo /> */}
                     <p className="font-bold text-inherit">YUI</p>
                 </NavbarBrand>
             </NavbarContent>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 {menuItems.map((item, index) => (
-                    <NavbarItem key={`${item}-${index}`}>
-                        <Link color="foreground" href={`#${item.url}`}>
+                    <NavbarItem key={`${item.url}-${index}`}>
+                        <Link
+                            color="foreground"
+                            href={`#${item.url}`}
+                            onClick={(e) => handleLinkClick(e, item.url)}
+                        >
                             {item.name}
                         </Link>
                     </NavbarItem>
                 ))}
             </NavbarContent>
+
             <NavbarContent justify="end">
                 <NavbarItem>
                     <Link color="foreground">{version}</Link>
                 </NavbarItem>
+                <div className="hidden md:block">
+                    <NavbarItem>
+                        <GithubStarButton repo="luis-developer-08/yui-installer" />
+                    </NavbarItem>
+                </div>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="sm:hidden"
                 />
             </NavbarContent>
+
             <NavbarMenu>
                 {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`mobile-${item}-${index}`}>
+                    <NavbarMenuItem key={`mobile-${item.url}-${index}`}>
                         <Link
                             className="w-full"
                             href={`#${item.url}`}
                             size="lg"
-                            onPress={() => handleLinkClick()}
+                            onClick={(e) => handleLinkClick(e, item.url)}
                         >
                             {item.name}
                         </Link>

@@ -2,18 +2,28 @@ import { BsGithub } from "react-icons/bs";
 import React from "react";
 import { Card, CardBody, Image, Divider, Button } from "@heroui/react";
 import { router } from "@inertiajs/react";
+import GithubStarButton from "@/Components/GithubStarButton";
 
 const Hero = () => {
-    //Sample
+    const handleLinkClick = (event, sectionId) => {
+        event.preventDefault(); // Prevent default anchor behavior
+
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+
+        setIsMenuOpen(false); // Close menu on mobile after clicking
+    };
 
     return (
         <div
             className="min-h-[80vh] flex flex-col justify-center items-center"
-            id="hero"
+            id="home"
         >
             <Card
                 isBlurred
-                className="border-none bg-background/60 dark:bg-default-100/50 p-2 md:p-5"
+                className="border-none bg-white/70 dark:bg-default-100/50 p-2 md:p-5"
                 shadow="sm"
             >
                 <CardBody className="overflow-visible py-2">
@@ -21,31 +31,32 @@ const Hero = () => {
                         <div className="flex flex-col col-span-6 md:col-span-8">
                             <div className="flex justify-between items-start">
                                 <div className="flex flex-col gap-0 justify-center items-center w-full md:items-start">
-                                    <h1 className="text-2xl md:text-3xl font-medium mt-2">
+                                    <h1 className="text-2xl md:text-3xl font-medium">
                                         🌟 YUI INSTALLER 🌟
                                     </h1>
+                                    <div className="md:hidden mt-2">
+                                        <GithubStarButton repo="luis-developer-08/yui-installer" />
+                                    </div>
+
                                     <Divider className="my-4" />
                                     <div className="hidden md:block">
                                         <h1 className="text-xl font-medium mt-5 mb-2">
                                             🚀 Introduction
                                         </h1>
                                         <p className="text-large text-foreground/80 text-justify">
-                                            Welcome to my personal laravel
-                                            installer YUI! This setup is
-                                            designed for developers who want a
-                                            lightweight, modern, and efficient
-                                            foundation for building Laravel
-                                            applications with a React frontend
-                                            powered by Inertia.js.
-                                        </p>
-                                        <p className="text-large text-foreground/80 text-justify">
-                                            This kit is JavaScript-first, using
-                                            JSX instead of TSX, making it
-                                            accessible to developers who prefer
-                                            plain JavaScript over TypeScript. It
-                                            includes React 19, TailwindCSS 4,
-                                            and Breeze for simple authentication
-                                            and scaffolding.
+                                            YUI is a lightweight Laravel
+                                            installer for modern developers,
+                                            featuring Laravel 12, React 19
+                                            (JSX), Inertia.js, TailwindCSS 4,
+                                            and Breeze for authentication.
+                                            Pre-configured with Orion for REST
+                                            APIs, TanStack Query for state
+                                            management, and Laravel-permission
+                                            for role handling. Optimized with
+                                            Vite for fast builds and includes
+                                            PHPUnit & Pest for testing. Get
+                                            started in minutes! Let me know if
+                                            you want any tweaks!
                                         </p>
                                     </div>
                                 </div>
@@ -64,8 +75,8 @@ const Hero = () => {
                                 <Button
                                     color="primary"
                                     size="lg"
-                                    onPress={() =>
-                                        router.visit("#getting-started")
+                                    onClick={(e) =>
+                                        handleLinkClick(e, "getting-started")
                                     }
                                 >
                                     Getting Started
@@ -79,6 +90,7 @@ const Hero = () => {
                                             "_blank"
                                         )
                                     }
+                                    className="bg-slate-500/50"
                                 >
                                     Github
                                 </Button>

@@ -5,7 +5,7 @@ import { createInertiaApp } from "@inertiajs/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { createRoot } from "react-dom/client";
-import { HeroUIProvider } from "@heroui/react";
+import { HeroUIProvider, ToastProvider } from "@heroui/react";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
@@ -31,6 +31,21 @@ createInertiaApp({
         root.render(
             <QueryClientProvider client={queryClient}>
                 <HeroUIProvider>
+                    <ToastProvider
+                        placement="top-right"
+                        toastOffset={70}
+                        toastProps={{
+                            radius: "sm",
+                            color: "primary",
+                            variant: "flat",
+                            timeout: 2000,
+                            hideIcon: true,
+                            classNames: {
+                                closeButton:
+                                    "opacity-100 absolute right-4 top-1/2 -translate-y-1/2",
+                            },
+                        }}
+                    />
                     <App {...props} />
                 </HeroUIProvider>
             </QueryClientProvider>

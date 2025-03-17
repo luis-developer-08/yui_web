@@ -1,5 +1,12 @@
 import React from "react";
-import { Card, CardBody, Divider, Snippet, Code } from "@heroui/react";
+import {
+    Card,
+    CardBody,
+    Divider,
+    Snippet,
+    Code,
+    addToast,
+} from "@heroui/react";
 
 const Usage = () => {
     return (
@@ -9,7 +16,7 @@ const Usage = () => {
         >
             <Card
                 isBlurred
-                className="border-none bg-background/60 dark:bg-default-100/50 p-2 md:p-5 w-full rounded-none md:rounded-2xl"
+                className="border-none bg-white/70 dark:bg-default-100/50 p-2 md:p-5 w-full rounded-none md:rounded-2xl"
                 shadow="sm"
             >
                 <CardBody className="overflow-visible py-2">
@@ -27,8 +34,13 @@ const Usage = () => {
                                         </h1>
                                         <Snippet
                                             size="sm"
-                                            className="p-5 w-full mt-2 overflow-x-auto"
+                                            className="p-4 w-full mt-2 overflow-x-auto bg-slate-400/50"
                                             symbol={false}
+                                            onCopy={() => {
+                                                addToast({
+                                                    title: "Copied!",
+                                                });
+                                            }}
                                         >
                                             php artisan make:inertia
                                             Components/MyComponent
@@ -44,7 +56,12 @@ const Usage = () => {
                                         <Snippet
                                             symbol={false}
                                             size="sm"
-                                            className="p-5 w-full mt-2 mb-5 overflow-x-auto"
+                                            className="p-4 w-full mt-2 mb-5 overflow-x-auto bg-slate-400/50"
+                                            onCopy={() => {
+                                                addToast({
+                                                    title: "Copied!",
+                                                });
+                                            }}
                                         >
                                             resources/js/Components/MyComponent.jsx
                                         </Snippet>
@@ -53,7 +70,7 @@ const Usage = () => {
                                         </h1>
                                         <Code
                                             size="sm"
-                                            className="p-5 w-full mt-2 overflow-x-auto"
+                                            className="p-4 w-full mt-2 overflow-x-auto bg-slate-400/50"
                                             symbol={false}
                                         >
                                             <span>
@@ -86,8 +103,13 @@ const Usage = () => {
                                         </h1>
                                         <Snippet
                                             size="sm"
-                                            className="p-5 w-full mt-2 overflow-x-auto"
+                                            className="p-4 w-full mt-2 overflow-x-auto bg-slate-400/50"
                                             symbol={false}
+                                            onCopy={() => {
+                                                addToast({
+                                                    title: "Copied!",
+                                                });
+                                            }}
                                         >
                                             php artisan make:orion
                                             PostController
@@ -95,17 +117,21 @@ const Usage = () => {
                                         <p className="mt-1 mb-1">
                                             This will create:
                                         </p>
-                                        <ul className="space-y-1 mb-5 overflow-x-auto">
+                                        <ul className="space-y-2 mb-5 overflow-x-auto">
                                             <li>
-                                                <Code>
+                                                <Code className=" bg-slate-400/50">
                                                     app/Http/Controllers/Orion/PostController.php
                                                 </Code>
                                             </li>
                                             <li className="flex item-center">
-                                                <Code>app/Models/Post.php</Code>
+                                                <Code className=" bg-slate-400/50">
+                                                    app/Models/Post.php
+                                                </Code>
                                             </li>
                                             <li className="flex item-center">
-                                                <Code>routes/api.php</Code>
+                                                <Code className=" bg-slate-400/50">
+                                                    routes/api.php
+                                                </Code>
                                             </li>
                                         </ul>
                                         <h1 className="text-lg md:text-xl font-medium mt-2">
@@ -114,7 +140,12 @@ const Usage = () => {
                                         <Snippet
                                             symbol={false}
                                             size="sm"
-                                            className="p-5 w-full mt-2 mb-5 overflow-x-auto"
+                                            className="p-4 w-full mt-2 mb-5 overflow-x-auto bg-slate-400/50"
+                                            onCopy={() => {
+                                                addToast({
+                                                    title: "Copied!",
+                                                });
+                                            }}
                                         >
                                             <span>{`app/Http/Controllers/Orion/PostController.php`}</span>
                                             <span>{`app/Models/Post.php`}</span>
@@ -124,7 +155,7 @@ const Usage = () => {
                                         </h1>
                                         <Code
                                             size="sm"
-                                            className="p-5 w-full mt-2 mb-5 overflow-x-auto"
+                                            className="p-4 w-full mt-2 mb-5 overflow-x-auto bg-slate-400/50"
                                             symbol={false}
                                         >
                                             <span>{`<?php`}</span>
@@ -155,7 +186,12 @@ const Usage = () => {
                                         <Snippet
                                             symbol={false}
                                             size="sm"
-                                            className="p-5 w-full mt-2 overflow-x-auto"
+                                            className="p-4 w-full mt-2 overflow-x-auto bg-slate-400/50"
+                                            onCopy={() => {
+                                                addToast({
+                                                    title: "Copied!",
+                                                });
+                                            }}
                                         >
                                             Orion::resource('posts',
                                             /App/Http/Controllers/Orion/PostController::class);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardBody, Divider, Snippet } from "@heroui/react";
+import { Card, CardBody, Divider, Snippet, addToast } from "@heroui/react";
 
 const GettingStarted = () => {
     return (
@@ -9,7 +9,7 @@ const GettingStarted = () => {
         >
             <Card
                 isBlurred
-                className="border-none bg-background/60 dark:bg-default-100/50 p-2 md:p-5 w-full rounded-none md:rounded-2xl"
+                className="border-none bg-white/70 dark:bg-default-100/50 p-2 md:p-5 w-full rounded-none md:rounded-2xl"
                 shadow="sm"
             >
                 <CardBody className="overflow-visible py-2">
@@ -26,8 +26,13 @@ const GettingStarted = () => {
                                     </h1>
                                     <Snippet
                                         size="sm"
-                                        className="p-5 mt-2 mb-5 overflow-x-auto"
+                                        className="p-4 mt-2 mb-5 overflow-x-auto bg-slate-400/50"
                                         symbol={false}
+                                        onCopy={() => {
+                                            addToast({
+                                                title: "Copied!",
+                                            });
+                                        }}
                                     >
                                         composer global require
                                         luis-developer-08/yui-installer
@@ -37,8 +42,13 @@ const GettingStarted = () => {
                                     </h1>
                                     <Snippet
                                         size="sm"
-                                        className="p-5 mt-2 mb-5 overflow-x-auto"
+                                        className="p-4 mt-2 mb-5 overflow-x-auto bg-slate-400/50"
                                         symbol={false}
+                                        onCopy={() => {
+                                            addToast({
+                                                title: "Copied!",
+                                            });
+                                        }}
                                     >
                                         yui new my-laravel-app
                                     </Snippet>
