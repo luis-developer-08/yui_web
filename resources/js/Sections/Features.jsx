@@ -22,7 +22,7 @@ const Features = () => {
 
     return (
         <div
-            className="min-h-[80vh] flex flex-col justify-center items-center w-full py-20 md:py-0"
+            className="min-h-[80vh] flex flex-col justify-center items-center w-full py-20"
             id="features"
         >
             <Card

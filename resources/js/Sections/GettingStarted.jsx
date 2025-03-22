@@ -134,7 +134,7 @@ const GettingStarted = () => {
                                         </span>
                                     </Snippet>
 
-                                    <h1 className="text-lg md:text-xl font-medium mt-2">
+                                    <h1 className="text-lg md:text-xl font-medium mt-2 mb-10">
                                         🎉 Your application is now configured
                                         and running!
                                     </h1>
