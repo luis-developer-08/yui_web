@@ -1,9 +1,18 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "luis-developer-08/yui_web",
+    "authors": [
+        {
+            "name": "luis",
+            "email": "sandyluisbalbuena.business@gmail.com"
+        }
+    ],
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "This setup is designed for developers who want a lightweight, modern, and efficient foundation for building Laravel applications with a React frontend powered by InertiaJs and Hero UI",
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
