@@ -221,7 +221,7 @@ class Post extends Model
 database/migrations/0001_01_01_000000_create_posts_table.php
 ```
 
-✅ **Auto-Registered Route in ********\*\***********`routes/api.php`********\*\*\*\*********:\*\*
+✅ **Auto-Registered Route in **`routes/api.php`\*\*
 
 ```php
 Orion::resource('posts', \App\Http\Controllers\Orion\PostController::class)->middleware(['auth', 'web']);
@@ -232,6 +232,8 @@ This command ensures:
 -   Correct controller placement.
 -   Generates missing models.
 -   Automatically registers routes.
+
+---
 
 ---
 
