@@ -43,8 +43,10 @@ const Usage = () => {
                                             symbol={false}
                                             onCopy={handleCopy}
                                         >
-                                            php artisan make:inertia
-                                            Components/MyComponent
+                                            <div className="w-48 md:w-full text-wrap">
+                                                php artisan make:inertia
+                                                Components/MyComponent
+                                            </div>
                                         </Snippet>
 
                                         <p className="mt-2">Creates:</p>
@@ -53,7 +55,9 @@ const Usage = () => {
                                             className="p-4 w-full mt-2 bg-slate-400/50"
                                             symbol={false}
                                         >
-                                            resources/js/Components/MyComponent.jsx
+                                            <div className="w-48 md:w-full text-wrap">
+                                                resources/js/Components/MyComponent.jsx
+                                            </div>
                                         </Snippet>
 
                                         <h2 className="text-lg md:text-xl font-medium mt-4">
@@ -87,11 +91,11 @@ export default MyComponent;`}
                                         <h1 className="text-lg md:text-xl font-medium mt-2">
                                             📂 Flexible Folder Placement
                                         </h1>
-                                        <p className="mt-2">
+                                        <p className="mt-2 mb-3">
                                             You can specify different folders
                                             using flags:
                                         </p>
-                                        <ul className="list-disc ml-6 mt-2 space-y-1">
+                                        <ul className="list-disc ml-6 mt-2 space-y-2 mb-5">
                                             <li>
                                                 <strong>-c</strong> or{" "}
                                                 <strong>--components</strong>:
@@ -137,8 +141,10 @@ export default MyComponent;`}
                                                 addToast({ title: "Copied!" })
                                             }
                                         >
-                                            php artisan make:inertia Dashboard
-                                            -p
+                                            <div className="w-48 md:w-full text-wrap">
+                                                php artisan make:inertia
+                                                Dashboard -p
+                                            </div>
                                         </Snippet>
 
                                         <p className="mt-2">Creates:</p>
@@ -161,8 +167,10 @@ export default MyComponent;`}
                                                 addToast({ title: "Copied!" })
                                             }
                                         >
-                                            php artisan make:inertia
-                                            Components/Auth/Login
+                                            <div className="w-48 md:w-full text-wrap">
+                                                php artisan make:inertia
+                                                Components/Auth/Login
+                                            </div>
                                         </Snippet>
 
                                         <p className="mt-2">Creates:</p>
@@ -171,7 +179,9 @@ export default MyComponent;`}
                                             className="p-4 w-full mt-2 bg-slate-400/50"
                                             symbol={false}
                                         >
-                                            resources/js/Components/Auth/Login.jsx
+                                            <div className="w-48 md:w-full text-wrap">
+                                                resources/js/Components/Auth/Login.jsx
+                                            </div>
                                         </Snippet>
 
                                         <h1 className="text-lg md:text-xl font-medium mt-4">
@@ -206,8 +216,10 @@ export default MyComponent;`}
                                             symbol={false}
                                             onCopy={handleCopy}
                                         >
-                                            php artisan make:orion
-                                            PostController
+                                            <div className="w-48 md:w-full text-wrap">
+                                                php artisan make:orion
+                                                PostController
+                                            </div>
                                         </Snippet>
 
                                         <p className="mt-2">Creates:</p>
