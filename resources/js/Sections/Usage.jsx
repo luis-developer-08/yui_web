@@ -230,7 +230,10 @@ export default MyComponent;`}
                                                 "database/migrations/0001_01_01_000000_create_posts_table.php",
                                                 "routes/api.php",
                                             ].map((path) => (
-                                                <li key={path}>
+                                                <li
+                                                    key={path}
+                                                    className="overflow-x-auto"
+                                                >
                                                     <Code className="bg-slate-400/50">
                                                         {path}
                                                     </Code>
@@ -285,26 +288,26 @@ class Post extends Model
                                         <h2 className="text-lg md:text-xl font-medium mt-4">
                                             🔥 Auto-Generated Migration
                                         </h2>
-                                        <Snippet
+                                        <Code
                                             size="sm"
-                                            className="p-4 w-full mt-2 bg-slate-400/50"
+                                            className="p-4 w-full mt-2 bg-slate-400/50 overflow-x-auto"
                                             symbol={false}
                                             onCopy={handleCopy}
                                         >
                                             {`database/migrations/0001_01_01_000000_create_posts_table.php`}
-                                        </Snippet>
+                                        </Code>
 
                                         <h2 className="text-lg md:text-xl font-medium mt-4">
                                             🔗 Auto-Registered Route
                                         </h2>
-                                        <Snippet
+                                        <Code
                                             size="sm"
-                                            className="p-4 w-full mt-2 bg-slate-400/50"
+                                            className="p-4 w-full mt-2 bg-slate-400/50 overflow-x-auto"
                                             symbol={false}
                                             onCopy={handleCopy}
                                         >
                                             {`Orion::resource('posts', \\App\\Http\\Controllers\\Orion\\PostController::class)->middleware(['auth', 'web']);`}
-                                        </Snippet>
+                                        </Code>
 
                                         <p className="mt-2">
                                             This command ensures correct
