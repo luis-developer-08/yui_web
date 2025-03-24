@@ -54,7 +54,7 @@ const NavbarHUI = () => {
                     <NavbarItem key={`${item.url}-${index}`}>
                         <Link
                             color="foreground"
-                            onClick={() => handleLinkClick(item.url)}
+                            onPress={() => handleLinkClick(item.url)}
                             className="hover:bg-blue-600 duration-500 hover:text-white hover:cursor-pointer w-full px-4 py-2 rounded-md transition"
                         >
                             {item.name}
@@ -84,7 +84,7 @@ const NavbarHUI = () => {
                         <Link
                             className="w-full"
                             size="lg"
-                            onClick={() => handleLinkClick(item.url)}
+                            onPress={() => handleLinkClick(item.url)}
                         >
                             {item.name}
                         </Link>

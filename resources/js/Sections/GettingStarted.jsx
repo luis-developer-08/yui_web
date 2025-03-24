@@ -84,7 +84,7 @@ const GettingStarted = () => {
 
                                     {/* Step 4: UI Provider Selection */}
                                     <h1 className="text-lg md:text-xl font-medium mt-2">
-                                        4️⃣ Choose a UI Provider (Select Hero UI)
+                                        4️⃣ Choose a UI Provider
                                     </h1>
                                     <Code
                                         size="sm"
@@ -96,7 +96,8 @@ const GettingStarted = () => {
                                     >
                                         <span className="text-wrap">
                                             [0] None <br />
-                                            [1] Hero UI
+                                            [1] Hero UI <br />
+                                            [2] shadcn/ui
                                         </span>
                                     </Code>
 

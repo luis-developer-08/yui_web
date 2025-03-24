@@ -57,11 +57,12 @@ During installation, you will be prompted to choose a database. Select the one y
 
 ### 4️⃣ Choose a UI Provider
 
-Next, select your preferred UI provider. Choose **Hero UI** for a beautiful and customizable interface:
+Next, select your preferred UI provider.
 
 ```bash
 [0] None
 [1] Hero UI
+[2] shadcn/ui
 ```
 
 ### 5️⃣ Navigate to Your Project Directory
