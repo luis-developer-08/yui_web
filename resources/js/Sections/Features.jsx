@@ -17,6 +17,7 @@ const Features = () => {
         "✔️ Vite-Powered – Lightning-fast HMR for smooth development.",
         "✔️ Pre-configured Testing – Includes PHPUnit & Pest.",
         "✔️ Hero UI – Beautiful, fast, and modern React UI library for building accessible and customizable web applications.",
+        "✔️ shadcn/ui – A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
         "✔️ Quick Setup – Get started in minutes!",
     ];
 
