@@ -40,7 +40,7 @@ const Features = () => {
                                         🎯 Features
                                     </h1>
                                     <Divider className="my-4" />
-                                    <ul className="txt-sm overflow-x-auto text-nowrap">
+                                    <ul className="txt-sm overflow-x-auto text-wrap">
                                         {features.map((feature) => (
                                             <li key={feature}>{feature}</li>
                                         ))}

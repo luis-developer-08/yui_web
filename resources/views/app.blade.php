@@ -1,41 +1,62 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="{{ config('app.name', 'Laravel') }}">
-        <meta property="og:description" content="🚀 YUI is a lightweight Laravel installer for modern developers, featuring Laravel 12, React 19 (JSX), Inertia.js, TailwindCSS 4, and Breeze for authentication. Pre-configured with Orion for REST APIs, TanStack Query for state management, and Laravel-permission for role handling. Optimized with Vite for fast builds and includes PHPUnit & Pest for testing. Get started in minutes!
+    <!-- ✅ Dynamic Meta Tags -->
+    <title inertia>{{ $title ?? config('app.name', 'Laravel') }}</title>
+    <meta name="description" content="{{ $description ?? 'YUI: Laravel Installer for modern developers' }}">
+    <meta name="keywords" content="{{ $keywords ?? 'Laravel, Installer, React, PHP, YUI' }}">
+    <link rel="canonical" href="{{ url()->current() }}">
+    <meta name="author" content="YUI Installer">
 
-Let me know if you want any tweaks! 🚀">
-        <meta property="og:image" content="{{ asset('images/yui.png') }}">
-        <meta property="og:url" content="{{ url()->current() }}">
-        <meta property="og:type" content="website">
-        <meta name="twitter:card" content="summary_large_image">
+    <!-- ✅ Open Graph Meta Tags (for Facebook, LinkedIn) -->
+    <meta property="og:title" content="{{ $title ?? config('app.name', 'Laravel') }}">
+    <meta property="og:description" content="{{ $description ?? 'YUI: Laravel Installer for modern developers' }}">
+    <meta property="og:image" content="{{ asset('images/yui.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
 
-        <!-- Twitter (X) Card (For Twitter) -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="{{ config('app.name', 'Laravel') }}">
-        <meta name="twitter:description" content="🚀 YUI is a lightweight Laravel installer for modern developers, featuring Laravel 12, React 19 (JSX), Inertia.js, TailwindCSS 4, and Breeze for authentication. Pre-configured with Orion for REST APIs, TanStack Query for state management, and Laravel-permission for role handling. Optimized with Vite for fast builds and includes PHPUnit & Pest for testing. Get started in minutes!
-Let me know if you want any tweaks! 🚀">
-        <meta name="twitter:image" content="{{ asset('images/yui.png') }}">
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title ?? config('app.name', 'Laravel') }}">
+    <meta name="twitter:description" content="{{ $description ?? 'YUI: Laravel Installer for modern developers' }}">
+    <meta name="twitter:image" content="{{ asset('images/yui.png') }}">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+    <!-- ✅ Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "{{ config('app.name', 'YUI Installer') }}",
+        "image": "{{ asset('images/yui.png') }}",
+        "url": "{{ url()->current() }}",
+        "description": "{{ $description ?? 'YUI: Laravel Installer for modern developers' }}",
+        "applicationCategory": "Developer Tool",
+        "creator": {
+            "@type": "Organization",
+            "name": "YUI Installer"
+        }
+    }
+    </script>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-        <link rel="icon" type="image/png" href="{{ asset('images/yui.png') }}">
+    <!-- ✅ Preconnect & Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
-        @routes
-        @viteReactRefresh
-        {{-- @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"]) --}}
-        @vite(['resources/js/app.jsx'])
-        @inertiaHead
-    </head>
-    <body class="font-sans antialiased">
-        @inertia
-    </body>
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('images/yui.png') }}">
+
+    <!-- ✅ Scripts -->
+    @routes
+    @viteReactRefresh
+    @vite(['resources/js/app.jsx'])
+    {{-- @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"]) --}}
+    @inertiaHead
+</head>
+
+<body class="font-sans antialiased">
+    @inertia
+</body>
 </html>
